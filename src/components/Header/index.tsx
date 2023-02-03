@@ -1,5 +1,4 @@
 import { Flex, HStack, Image, Link, Text } from '@chakra-ui/react'
-import React from 'react'
 import { NavLink as RouterLink } from "react-router-dom";
 
 const Header = () => {
@@ -13,12 +12,11 @@ const Header = () => {
     >
       <Image
         objectFit='cover'
-        bg='transparent'
         src='src/assets/logo.jpg'
       />
 
       <HStack gap={8} mr={8}>
-        <Link as={RouterLink} to='' isExternal>
+        <Link as={RouterLink} to='/championship' isExternal>
           <Text color='#50f000' fontFamily='Poppins, sans-serif' fontWeight='semibold'> Copa do Brasil </Text>
         </Link>
         <Link as={RouterLink} to='' isExternal>

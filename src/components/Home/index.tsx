@@ -1,6 +1,6 @@
 import { SimpleGrid, Card, CardHeader, Heading, CardBody, CardFooter, Image, Button, Text, Stack } from '@chakra-ui/react'
 import { useEffect } from 'react'
-import { reqs } from '../../services/reqs'
+import { reqs } from '../../services/championships'
 
 export const Home = () => {
     const service = reqs()
