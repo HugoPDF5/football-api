@@ -7,7 +7,7 @@ const Header = () => {
       as='header'
       w='100%'
       h='24'
-      bg='#000000'
+      bg='#1f1f1f'
       justify={'space-between'}
     >
       <Image
@@ -17,10 +17,10 @@ const Header = () => {
 
       <HStack gap={8} mr={8}>
         <Link as={RouterLink} to='/championship' isExternal>
-          <Text color='#50f000' fontFamily='Poppins, sans-serif' fontWeight='semibold'> Copa do Brasil </Text>
+          <Text color='#a3ba66' fontFamily='Poppins, sans-serif' fontWeight='semibold'> Copa do Brasil </Text>
         </Link>
         <Link as={RouterLink} to='' isExternal>
-          <Text color='#50f000' fontFamily='Poppins, sans-serif' fontWeight='semibold'> Campeonato Brasileiro </Text>
+          <Text color='#a3ba66' fontFamily='Poppins, sans-serif' fontWeight='semibold'> Campeonato Brasileiro </Text>
         </Link>
       </HStack>
     </Flex>
