@@ -16,10 +16,7 @@ const Header = () => {
       />
 
       <HStack gap={8} mr={8}>
-        <Link as={RouterLink} to='/championship' isExternal>
-          <Text color='#a3ba66' fontFamily='Poppins, sans-serif' fontWeight='semibold'> Copa do Brasil </Text>
-        </Link>
-        <Link as={RouterLink} to='' isExternal>
+        <Link as={RouterLink} to='/brasileirao'>
           <Text color='#a3ba66' fontFamily='Poppins, sans-serif' fontWeight='semibold'> Campeonato Brasileiro </Text>
         </Link>
       </HStack>

@@ -51,21 +51,6 @@ export interface championshipIdProps extends championshipProps {
   ];
 }
 
-export interface strikersProps {
-  atleta: {
-    atleta_id: number;
-    nome_popular: string;
-    posicao: string[];
-  };
-  time: {
-    time_id: number;
-    nome_popular: string;
-    sigla: string;
-    escudo: string;
-  };
-  gols: number;
-}
-
 export interface roundProps {
   nome: string;
   partidas: [

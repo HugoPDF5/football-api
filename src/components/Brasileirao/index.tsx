@@ -8,25 +8,15 @@ const Brasileirao = () => {
 
     const championshipService = useChampionships()
     const [tableData, setTableData] = useState([])
-    const [strikersTableData, setStrikersTableData] = useState([])
+    const [idChamp, setIdChamp] = useState<number>(10)
 
     useEffect(() => {
         async function getTableData() {
-            const { data } = await championshipService.getTableByChampionshipId('2')
+            const { data } = await championshipService.getTableByChampionshipId(idChamp)
             setTableData(data)
         }
         getTableData()
     }, [])
-
-    useEffect(() => {
-        async function getStrikersTableData() {
-            const data = await championshipService.getStrikersByChampionshipId('2')
-            setStrikersTableData(data)
-        }
-        getStrikersTableData()
-    }, [])
-
-
 
     return (
         <Box bgColor='#1f1f1f'>
@@ -73,36 +63,8 @@ const Brasileirao = () => {
                         </Tbody>
                     </Table>
                 </TableContainer>
-                <Switcher championshipId={2} />
+                <Switcher championshipId={idChamp} />
             </Flex>
-
-            <Box>
-                <Heading textAlign='center' color='#a3ba66' my={12}> Artilharia </Heading>
-                <TableContainer >
-                    <Table w='90%' variant='simple' size='md' margin='0 auto' mb='10'>
-                        <Thead>
-                            <Tr bgColor='#a3ba66'>
-                                <Th></Th>
-                                <Th fontFamily='Open Sans, sans-serif' fontWeight='extrabold'>Nome</Th>
-                                <Th fontFamily='Open Sans, sans-serif' fontWeight='extrabold'>Posição</Th>
-                                <Th fontFamily='Open Sans, sans-serif' fontWeight='extrabold'>Gols</Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody>
-                            {strikersTableData.map((player: any, index) => {
-                                return (
-                                    <Tr color='white' key={index} fontFamily='Open Sans, sans-serif'>
-                                        <Td>{index + 1}</Td>
-                                        <Td> <Flex gap={6} align='center'> <Image boxSize='30px' src={player.time.escudo} /> {player.atleta.nome_popular}</Flex></Td>
-                                        <Td>{player.atleta.posicao.sigla}</Td>
-                                        <Td>{player.gols}</Td>
-                                    </Tr>
-                                )
-                            })}
-                        </Tbody>
-                    </Table>
-                </TableContainer>
-            </Box>
         </Box>
 
 
