@@ -1,8 +1,9 @@
-import { championshipIdProps, championshipProps, roundProps, strikersProps } from "../types/championship";
+import { championshipIdProps, championshipProps, roundProps } from "../types/championship";
 import { api } from "./api";
 
 export function useChampionships() {
   const baseUrl = 'campeonatos'
+
   const getAllChampionships = async (): Promise<championshipProps[] | []> => {
     const { data } = await api.get(baseUrl);
     return data.map((item: championshipProps) => {
@@ -21,7 +22,7 @@ export function useChampionships() {
     });
   };
 
-  const getChampionshipById = async (id: string): Promise<championshipIdProps> => {
+  const getChampionshipById = async (id: number): Promise<championshipIdProps> => {
     const { data } = await api.get(`${baseUrl}/${id}`);
     return data.map((champ: championshipIdProps) => {
       return {
@@ -42,20 +43,9 @@ export function useChampionships() {
     });
   };
 
-  const getTableByChampionshipId = async (id: string) => {
+  const getTableByChampionshipId = async (id: number) => {
     const response = await api.get(`${baseUrl}/${id}/tabela`);
     return response;
-  };
-
-  const getStrikersByChampionshipId = async (id: string): Promise<strikersProps> => {
-    const { data } = await api.get(`${baseUrl}/${id}/artilharia`);
-    return data.map((player: strikersProps) => {
-      return {
-        atleta: player.atleta,
-        time: player.time,
-        gols: player.gols,
-      };
-    });
   };
 
   const getRoundById = async (champId: number, roundId: number): Promise<roundProps> => {
@@ -64,13 +54,12 @@ export function useChampionships() {
         partidas: data.partidas,
         nome: data.nome
       }
-  }
+  };
 
   return {
     getAllChampionships,
     getChampionshipById,
     getTableByChampionshipId,
-    getStrikersByChampionshipId,
     getRoundById
   };
 }
