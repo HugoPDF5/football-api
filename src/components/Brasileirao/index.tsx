@@ -1,7 +1,6 @@
 import { Box, Flex, Heading, Image, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { useChampionships } from '../../services/championships'
-import Header from '../Header'
 import Switcher from '../Switcher'
 
 const Brasileirao = () => {
@@ -20,13 +19,12 @@ const Brasileirao = () => {
 
     return (
         <Box bgColor='#1f1f1f'>
-            <Header />
             <Image
                 src='src/assets/banner.jpg'
                 w='100%'
             />
             <Heading textAlign='center' color='#a3ba66' my={12}> Brasileirão Série A </Heading>
-            <Flex justify='space-evenly'>
+            <Flex justify='space-evenly' direction={['column', 'column', 'row', 'row']}>
                 <TableContainer>
                     <Table variant='simple' size='md' mb='10'>
                         <Thead>
@@ -66,8 +64,6 @@ const Brasileirao = () => {
                 <Switcher championshipId={idChamp} />
             </Flex>
         </Box>
-
-
     )
 }
 

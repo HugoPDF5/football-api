@@ -78,8 +78,8 @@ const Switcher = ({ championshipId }: switcherProps) => {
                             <Heading color='white' my='4' textAlign='center' size='xs'>
                                 {partida.data_realizacao} - {partida.estadio.nome_popular} - {partida.hora_realizacao}
                             </Heading>
-                            <Flex color='white' align='center' justify='space-between' m='1rem auto' w='50%'>
-                                <Flex align='center' gap='2'>
+                            <Flex color='white' align='center' justify='space-between' m='1rem auto' w={["80%","70%","60%",'50%']}>
+                                <Flex align='center' gap='2' >
                                     <Text fontSize={18}>{partida.time_mandante.sigla}</Text>
                                     <Image src={partida.time_mandante.escudo} boxSize='35px' />
                                 </Flex>
