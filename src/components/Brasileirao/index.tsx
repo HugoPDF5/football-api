@@ -20,7 +20,7 @@ const Brasileirao = () => {
     return (
         <Box bgColor='#1f1f1f'>
             <Image
-                src='assets/banner.jpg'
+                src='../assets/banner.jpg'
                 w='100%'
             />
             <Heading textAlign='center' color='#a3ba66' my={12}> Brasileirão Série A </Heading>
