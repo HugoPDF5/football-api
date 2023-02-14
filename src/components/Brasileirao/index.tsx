@@ -52,9 +52,9 @@ const Brasileirao = () => {
                         ) :
                             tableData.map((item: any, index) => {
                                 return (
-                                    <Tr color='white' key={index} fontFamily='Open Sans, sans-serif'>
+                                    <Tr alignItems='center' color='white' key={index} fontFamily='Open Sans, sans-serif'>
                                         <Td>{index + 1}</Td>
-                                        <Td> <Flex gap={6} align='center'> <Image boxSize='30px' src={item.time.escudo} /> {item.time.nome_popular}</Flex></Td>
+                                        <Td> <Flex gap={6} align='center'> <Image boxSize='30px' src={item.time.escudo} />{item.time.nome_popular}</Flex></Td>
                                         <Td>{item.pontos}</Td>
                                         <Td>{item.jogos}</Td>
                                         <Td>{item.vitorias}</Td>
