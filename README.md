@@ -4,6 +4,8 @@ Link para a API: [aqui](https://www.api-futebol.com.br/)
 
 Você pode acessá-lo clicando [aqui](https://brasileirao-app.netlify.app/)
 
+***IMPORTANTE: SE OS DADOS FICAREM CARREGANDO INFINITAMENTE, INFELIZMENTE O NÚMERO DE REQUISIÇÕES DIÁRIAS MÁXIMAS FOI ATINGIDO, SÓ PODERÁ SER ACESSADO NO OUTRO DIA***
+
 **Após clonar o projeto, instale as dependências com o comando:**
 
 ```bash
