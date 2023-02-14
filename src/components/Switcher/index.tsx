@@ -53,7 +53,7 @@ const Switcher = ({ championshipId }: switcherProps) => {
     }, [round])
 
     return (
-        <Container m='0'>
+        <Container m='0' minH='100vh'>
             <Heading color='#a3ba66' mb='4'>JOGOS</Heading>
             <Divider />
             <Flex align='center' justify='space-between'>
@@ -97,9 +97,7 @@ const Switcher = ({ championshipId }: switcherProps) => {
                         </Box>
                     )
                 })
-
             }
-
         </Container>
 
     )

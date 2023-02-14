@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
+import { Box, Flex, Heading, Image, Spinner, Table, TableContainer, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { useChampionships } from '../../services/championships'
 import Switcher from '../Switcher'
@@ -8,17 +8,20 @@ const Brasileirao = () => {
     const championshipService = useChampionships()
     const [tableData, setTableData] = useState([])
     const [idChamp, setIdChamp] = useState<number>(10)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     useEffect(() => {
         async function getTableData() {
+            setIsLoading(true)
             const { data } = await championshipService.getTableByChampionshipId(idChamp)
+            setIsLoading(false)
             setTableData(data)
         }
         getTableData()
     }, [])
 
     return (
-        <Box bgColor='#1f1f1f'>
+        <Box bgColor='#1f1f1f' minH='100vh'>
             <Image
                 src='../assets/banner.jpg'
                 w='100%'
@@ -42,7 +45,12 @@ const Brasileirao = () => {
                             </Tr>
                         </Thead>
                         <Tbody>
-                            {tableData.map((item: any, index) => {
+                        {isLoading ? (
+                            <Flex justify='end'>
+                                <Spinner color='white' />
+                            </Flex>
+                        ) :
+                            tableData.map((item: any, index) => {
                                 return (
                                     <Tr color='white' key={index} fontFamily='Open Sans, sans-serif'>
                                         <Td>{index + 1}</Td>
