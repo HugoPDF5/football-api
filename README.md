@@ -1,6 +1,6 @@
 Pequena aplicação que consome API privada de dados futebolísticos
 
-API: [](https://www.api-futebol.com.br/)
+Link para a API: [aqui](https://www.api-futebol.com.br/)
 
 Você pode acessá-lo clicando [aqui](https://brasileirao-app.netlify.app/)
 
